@@ -20,6 +20,10 @@ function Banner() {
   useEffect(()=>{
     fetchData()
   },[])
+  
+  // function truncate(str,n){
+  //   return str.length>n?str?.substr(0,n-1)+'...':str;
+  // }
 
   return (
   
@@ -32,7 +36,22 @@ function Banner() {
       
       backgroundImage:`url(${baseURL}${movie.backdrop_path})`
     }}
-    >Banner</div>
+    >
+
+      <div className='banner_content'>
+        <h1 className='banner_title'>
+          {movie.name}
+
+        </h1>
+        <h2 className='banner_overview'> 
+
+          {movie.overview}
+        </h2>
+
+      </div>
+
+    
+    </div>
   )
 }
 
